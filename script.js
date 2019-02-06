@@ -1,9 +1,11 @@
 const rollBtn = document.getElementById("roller");
 const scoreUpdater = document.getElementById("score");
-const rollUpdater = document.getElem
+const infoUpdater = document.getElementById("info");
 const diceImg = document.getElementById("dice");
+const resetGame = document.getElementById("reset");
+const winUpdater = document.getElementById("wins");
 let score = 0;
-
+let wins = 0;
 
 
 roller.addEventListener("click", () => {
@@ -13,27 +15,57 @@ roller.addEventListener("click", () => {
         score = 0;
         scoreUpdater.textContent = score;
         diceImg.src = "/img/dice1.png";
+        infoUpdater.textContent = "You rolled a 1! You score has been reset."
     } else if(num == 2) {
         score += 2;
         scoreUpdater.textContent = score;
         diceImg.src = "/img/dice2.png";
+        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        gameCheck();
     } else if(num == 3) {
         score += 3;
         scoreUpdater.textContent = score;
         diceImg.src = "/img/dice3.png";
+        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        gameCheck();
     } else if(num == 4){
         score += 4
         scoreUpdater.textContent = score;
         diceImg.src = "/img/dice4.png";
+        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        gameCheck();
     } else if(num == 5){
         score += 5
         scoreUpdater.textContent = score;
         diceImg.src = "/img/dice5.png";
+        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        gameCheck();
     } else if(num == 6) {
         score += 6
         scoreUpdater.textContent = score;
         diceImg.src = "/img/dice6.png";
+        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        gameCheck();
     }
 });
 
+function gameCheck() {
+    if(score >= 20) {
+        infoUpdater.textContent = `Congratulations you made it to 20!`
+        wins++;
+        winUpdater.textContent = wins;
+        score = 0
+        scoreUpdater.textContent = score;
+    }
+}
 
+resetGame.addEventListener('click', () => {
+    if(confirm("WARNING \nThis will reset your game as well as your wins. \nAre you sure you want to conntinue?")) {
+        wins = 0;
+        winUpdater.textContent = wins;
+        score = 0;
+        scoreUpdater.textContent = score;
+    } else {
+        prompt("Reset Cancelled.")
+    }
+})
