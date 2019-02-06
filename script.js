@@ -10,6 +10,7 @@ let wins = 0;
 
 roller.addEventListener("click", () => {
     let num = (Math.floor(Math.random() * 6 ) + 1);
+    diceImg.style.display = "block";
     console.log(num);
     if(num == 1){
         score = 0;
@@ -56,15 +57,17 @@ function gameCheck() {
         winUpdater.textContent = wins;
         score = 0
         scoreUpdater.textContent = score;
+        diceImg.style.display = "none"
     }
 }
 
 resetGame.addEventListener('click', () => {
-    if(confirm("WARNING \nThis will reset your game as well as your wins. \nAre you sure you want to conntinue?")) {
+    if(confirm("WARNING \nThis will reset your game as well as your wins. \nAre you sure you want to continue?")) {
         wins = 0;
         winUpdater.textContent = wins;
         score = 0;
         scoreUpdater.textContent = score;
+        diceImg.style.display = "none"
     } else {
         prompt("Reset Cancelled.")
     }
