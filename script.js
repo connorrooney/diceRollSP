@@ -15,36 +15,36 @@ roller.addEventListener("click", () => {
     if(num == 1){
         score = 0;
         scoreUpdater.textContent = score;
-        diceImg.src = "/img/dice1.png";
+        diceImg.src = "./img/dice1.png";
         infoUpdater.textContent = "You rolled a 1! You score has been reset."
     } else if(num == 2) {
         score += 2;
         scoreUpdater.textContent = score;
-        diceImg.src = "/img/dice2.png";
+        diceImg.src = "./img/dice2.png";
         infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         gameCheck();
     } else if(num == 3) {
         score += 3;
         scoreUpdater.textContent = score;
-        diceImg.src = "/img/dice3.png";
+        diceImg.src = "./img/dice3.png";
         infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         gameCheck();
     } else if(num == 4){
         score += 4
         scoreUpdater.textContent = score;
-        diceImg.src = "/img/dice4.png";
+        diceImg.src = "./img/dice4.png";
         infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         gameCheck();
     } else if(num == 5){
         score += 5
         scoreUpdater.textContent = score;
-        diceImg.src = "/img/dice5.png";
+        diceImg.src = "./img/dice5.png";
         infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         gameCheck();
     } else if(num == 6) {
         score += 6
         scoreUpdater.textContent = score;
-        diceImg.src = "/img/dice6.png";
+        diceImg.src = "./img/dice6.png";
         infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         gameCheck();
     }
